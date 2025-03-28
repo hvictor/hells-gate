@@ -88,7 +88,7 @@ loop_compute_symbol_hash:
     jnz loop_over_ntdll_names;
 
     mov cx, [rdi + 2*rcx];                      # RCX = ordinal
-    xor eax, eax;
+    xor rax, rax;
     mov eax, [r11 + 4*rcx];                     # EAX = AddressOfFunctions[ordinal] = RVA of NtProtectVirtualMemory
     add rax, r9;                                # RAX = VMA of NtProtectVirtualMemory
 
